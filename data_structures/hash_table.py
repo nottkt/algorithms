@@ -11,11 +11,9 @@ Pythonではdictがハッシュテーブルとして実装されている。
 
 def is_subset_of_another_ary(ary1: list[int], ary2: list[int]):
     if len(ary1) > len(ary2):
-        largerAry = ary1
-        smallerAry = ary2
+        largerAry, smallerAry = ary1, ary2
     else:
-        largerAry = ary2
-        smallerAry = ary1
+        largerAry, smallerAry = ary2, ary1
 
     for i in range(len(smallerAry)):
         found_flag = False
@@ -41,11 +39,9 @@ def is_subset_of_another_ary_hash_ver(ary1: list[int], ary2: list[int]):
     hash_table: dict[int, bool] = {}
 
     if len(ary1) > len(ary2):
-        largerAry = ary1
-        smallerAry = ary2
+        largerAry, smallerAry = ary1, ary2
     else:
-        largerAry = ary2
-        smallerAry = ary1
+        largerAry, smallerAry = ary2, ary1
 
     for v in largerAry:
         hash_table[v] = True
