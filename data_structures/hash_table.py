@@ -29,9 +29,9 @@ def is_subset_of_another_ary(ary1: list[int], ary2: list[int]):
 
 
 """
-is_subset_of_another_aryの計算量はO(N^2)
-ハッシュテーブルを使って計算量減らす。
-is_subset_of_another_ary_hash_verの計算量はO(N)になる
+is_subset_of_another_aryの計算量はO(N*M)
+両方の配列を走査するので、長さが同程度ならO(N^2)になる。
+ハッシュテーブルを使うと、is_subset_of_another_ary_hash_verの計算量は平均的にO(N+M)になる。
 """
 
 
@@ -47,7 +47,7 @@ def is_subset_of_another_ary_hash_ver(ary1: list[int], ary2: list[int]):
         hash_table[v] = True
 
     for v in smallerAry:
-        if not (hash_table.get(v)):
+        if hash_table.get(v) is None:
             return False
     return True
 
