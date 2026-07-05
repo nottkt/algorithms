@@ -17,8 +17,9 @@ def is_subset_of_another_ary(ary1: list[int], ary2: list[int]):
         largerAry = ary2
         smallerAry = ary1
 
-    found_flag = False
     for i in range(len(smallerAry)):
+        found_flag = False
+
         for j in range(len(largerAry)):
             if smallerAry[i] == largerAry[j]:
                 found_flag = True
